@@ -22,7 +22,7 @@ git add *
 git commit -m "Auto Deploy"
 echo 'remote add\n'
 git remote add gh-pages git@github.com:liangxinhui/EsunnyAPI_FAQ.git
-echo 'git remote -v\n'
+git remote -v
 echo 'git push\n'
 git push gh-pages master:gh-pages -f
 
