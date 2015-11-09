@@ -12,7 +12,9 @@ rm -rf _book
 git pull
 
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
-${GIBOOK_BIN}  build
+
+cd ${basePath}/book_src/EsunnyAPI_FAQ
+${GIBOOK_BIN}  build 
 
 cd _book
 git init
