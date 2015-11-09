@@ -20,7 +20,10 @@ cd _book
 git init
 git add *
 git commit -m "Auto Deploy"
+echo 'remote add\n'
 git remote add gh-pages git@github.com:liangxinhui/EsunnyAPI_FAQ.git
+echo 'git remote -v\n'
+echo 'git push\n'
 git push gh-pages master:gh-pages -f
 
 echo 'done'
