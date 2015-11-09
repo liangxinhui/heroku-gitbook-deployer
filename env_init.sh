@@ -23,13 +23,12 @@ git clone https://github.com/liangxinhui/EsunnyAPI_FAQ.git
 fi
 
 # gitbook
-npm install gitbook-cli
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 if [ ! -d ~/.gitbook/versions/2.5.2-liangxh ];then
 echo '<br>Link gitbook version...\n'
-${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh/
+${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh
 fi
-
+${GIBOOK_BIN} versions
 echo '<br>Install gitbook plugins...<br>'
 ${GIBOOK_BIN} -v 2.5.2-liangxh install EsunnyAPI_FAQ
 
