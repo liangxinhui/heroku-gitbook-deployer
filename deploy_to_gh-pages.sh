@@ -12,7 +12,7 @@ rm -rf _book
 git pull
 
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
-${GIBOOK_BIN} -v 2.5.2-liangxh build
+${GIBOOK_BIN}  build
 
 cd _book
 git init
