@@ -32,6 +32,7 @@ ${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh  2.5.2-li
 cd -
 fi
 
+${GIBOOK_BIN} versions:install latest
 ${GIBOOK_BIN} versions
 echo '<br>Install gitbook plugins...<br>'
 ${GIBOOK_BIN} -v 2.5.2-liangxh install EsunnyAPI_FAQ
