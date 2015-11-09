@@ -4,7 +4,7 @@ git config --global user.name "liangxinhui"
 if [ ! -f ~/.ssh/id_rsa ]; then 
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
-echo 'add this key to github:'
+echo 'add this key to github:\n'
 cat ~/.ssh/id_rsa.pub
 
 
@@ -18,21 +18,21 @@ fi
 cd book_src
 
 if [ ! -d EsunnyAPI_FAQ ]; then 
-echo 'Clone EsunnyAPI_FAQ...'
+echo 'Clone EsunnyAPI_FAQ...\n'
 git clone https://github.com/liangxinhui/EsunnyAPI_FAQ.git
 fi
 
 # gitbook
 npm install gitbook-cli
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
-echo $basePath
-echo $GIBOOK_BIN
+unzip -qf ${basePath}/gitbook_versions/2.5.2.zip 
+mv 2.5.2 ${basePath}/gitbook_versions/2.5.2-liangxh
 if [ ! -d ~/.gitbook/versions/2.5.2-liangxh ];then
-echo 'Link gitbook version...'
-${GIBOOK_BIN} versions:link ${basePath}/gitbook/2.5.2-liangxh/ 2.5.2-liangxh/
+echo 'Link gitbook version...\n'
+${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh/
 fi
 
-echo 'Install gitbook plugins...'
+echo 'Install gitbook plugins...\n'
 ${GIBOOK_BIN} -v 2.5.2-liangxh install EsunnyAPI_FAQ
 
 echo 'Done'
