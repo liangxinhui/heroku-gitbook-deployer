@@ -14,11 +14,18 @@ function run_cmd(cmd, args, callback) {
   child.stdout.on('end', function() { callback (resp) });
 }
 
-app.get('/test', function(req, res){ 
+app.get('/updatebook', function(req, res){ 
   run_cmd('sh',[__dirname + "/deploy_to_gh-pages.sh", __dirname],function(data){
-	console.log('deploy_to_gh-pages.sh:' + data);
+	res.send('updatebook:\n' + data);
   });
 }); 
 
-app.listen('8080');
-console.log('listen at: 8080');
+
+app.get('/init', function(req, res){ 
+  run_cmd('sh',[__dirname + "/env_init.sh", __dirname],function(data){
+	res.send('init:\n' + data);
+  });
+}); 
+
+app.listen(process.env.PORT);
+console.log('listen at: ' + process.env.PORT);
