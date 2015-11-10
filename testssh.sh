@@ -2,6 +2,8 @@
 
 echo whoami: `whoami`
 
+
+
 git config --global user.email "liangxinhui@qq.com"
 git config --global user.name "liangxinhui"
 
@@ -11,6 +13,7 @@ fi
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
 
+cp -f known_hosts ~/.ssh/ 
 
 if [ ! -d EsunnyAPI_FAQ ]; then 
 echo '<br>Clone EsunnyAPI_FAQ...<br>'
