@@ -1,30 +1,27 @@
 #! /bin/sh
 
-echo "==============" >> /tmp/gitlog.txt
-DATETIME=$(date +%Y%m%d%H%M%S)
-echo  deploy_${DATETIME} >> /tmp/gitlog.txt
 basePath=$1
-echo basePath:${basePath} >> /tmp/gitlog.txt
-echo "--------------" >> /tmp/gitlog.txt
 
 cd ${basePath}/book_src
 rm -rf _book
-git pull
 
+echo '<p>pull</p>'
+git pull
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 
+echo '<p>build</p>'
 cd ${basePath}/book_src/EsunnyAPI_FAQ
-${GIBOOK_BIN}  build 
+${GIBOOK_BIN} -v 2.5.2-liangxh build 
 
 cd _book
 git init
 git add *
 git commit -m "Auto Deploy"
-echo 'remote add\n'
+echo '<p>remote add</p>'
 git remote add gh-pages git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 git remote -v
-echo 'git push\n'
+echo '<p>git push</p>'
 git push gh-pages master:gh-pages -f
 
-echo 'done'
+echo '<p>done</p>'
 

@@ -8,12 +8,6 @@ echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
 
 
-
-
-cd ~/
-echo 'pwd:'
-pwd
-
 basePath=$1
 cd ${basePath}
 
@@ -32,33 +26,21 @@ fi
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 
 
-if [ ! -d ~/.gitbook/versions/2.5.2-liangxh ];then
-echo '<br>Link gitbook version...\n'
-${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh
-fi
-${GIBOOK_BIN} versions
-
-
 echo '<br>2.5.2-liangxh install/<br>'
 cd ${basePath}/gitbook_versions/2.5.2-liangxh
 npm install 
 cd - 
 
+if [ ! -d ~/.gitbook/versions/2.5.2-liangxh ];then
+echo '<br>Link gitbook version...\n'
+${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh
+fi
 
-${GIBOOK_BIN} versions:install latest
 ${GIBOOK_BIN} versions
 
-echo '<br>ls ~/.gitbook/versions/<br>'
-ls ~/.gitbook/versions/
-echo '<br>ls ~/.gitbook/versions/2.5.2<br>'
-ls ~/.gitbook/versions/2.5.2
-echo '<br>ls ~/.gitbook/versions/2.5.2-liangxh<br>'
-ls ~/.gitbook/versions/2.5.2-liangxh
 
 echo '<br>Install gitbook plugins...<br>'
 
 ${GIBOOK_BIN} -v 2.5.2-liangxh install EsunnyAPI_FAQ
-
-${GIBOOK_BIN} install EsunnyAPI_FAQ
 
 echo '<br>Done'
