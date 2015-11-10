@@ -15,6 +15,9 @@ echo '<br>Clone EsunnyAPI_FAQ...<br>'
 git clone git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 fi
 
+pwd
+ls
+
 cd ${basePath}/book_src/EsunnyAPI_FAQ
 rm -rf _book
 echo '<p>pull</p>'
@@ -25,6 +28,7 @@ echo '<p>build</p>'
 ${GIBOOK_BIN} -v 2.5.2-liangxh build 
 
 cd _book
+pwd
 git init
 git add *
 git commit -m "Auto Deploy"
