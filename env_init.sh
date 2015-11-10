@@ -22,8 +22,6 @@ cd ${basePath}
 
 
 cp -f ${basePath}/known_hosts ~/.ssh/ 
-
-
 echo '~/.ssh/known_hosts' 
 cat ~/.ssh/known_hosts
 

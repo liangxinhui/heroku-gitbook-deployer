@@ -11,6 +11,7 @@ cd ${basePath}/
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
 
+cp -f ${basePath}/known_hosts ~/.ssh/ 
 echo '<br>~/.ssh/known_hosts<br>' 
 cat ~/.ssh/known_hosts
 
@@ -70,6 +71,7 @@ echo '<p>remote add</p>'
 git remote add gh-pages git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 git remote -v
 
+cp -f ${basePath}/known_hosts ~/.ssh/ 
 echo '<br>~/.ssh/known_hosts<br>' 
 cat ~/.ssh/known_hosts
 
