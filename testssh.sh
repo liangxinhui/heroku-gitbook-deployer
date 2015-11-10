@@ -17,6 +17,9 @@ echo '<br>Clone EsunnyAPI_FAQ...<br>'
 git clone git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 fi
 
+echo '<br>ssh -v git@github.com...<br>'
+ssh -v git@github.com
+
 if [ ! -d EsunnyAPI_FAQ ]; then 
 echo 'Err Clone'
 exit 1
