@@ -16,6 +16,8 @@ basePath=$1
 cd ${basePath}
 
 
+cp -f ${basePath}/known_hosts ~/.ssh/ 
+
 # gitbook
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 
