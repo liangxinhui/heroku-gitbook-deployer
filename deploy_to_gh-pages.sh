@@ -28,6 +28,11 @@ echo '<br>Clone EsunnyAPI_FAQ...<br>'
 git clone git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 fi
 
+echo 'ls EsunnyAPI_FAQ:' 
+ls EsunnyAPI_FAQ
+
+
+
 if [ ! -d EsunnyAPI_FAQ ]; then 
 echo 'Err Clone'
 exit 1
