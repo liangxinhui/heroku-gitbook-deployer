@@ -31,7 +31,7 @@ app.get('/init', function(req, res){
 
 app.get('/test', function(req, res){ 
   run_cmd('sh',[__dirname + "/testssh.sh", __dirname],function(data){
-	res.send('init:\n' + data);
+	res.send('test:\n' + data);
   });
 }); 
 

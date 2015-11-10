@@ -1,5 +1,7 @@
 #! /bin/sh
 
+echo whoami: `whoami`
+
 basePath=$1
 
 cd ${basePath}/

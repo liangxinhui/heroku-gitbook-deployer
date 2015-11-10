@@ -1,5 +1,10 @@
+
+
+echo whoami: `whoami`
+
 git config --global user.email "liangxinhui@qq.com"
 git config --global user.name "liangxinhui"
+
 if [ ! -f ~/.ssh/id_rsa ]; then 
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
