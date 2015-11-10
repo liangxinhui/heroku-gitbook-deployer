@@ -11,6 +11,9 @@ cd ${basePath}/
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
 
+echo '<br>~/.ssh/known_hosts<br>' 
+cat ~/.ssh/known_hosts
+
 
 if [ ! -d book_src ]; then
 mkdir book_src

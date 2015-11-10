@@ -1,11 +1,16 @@
 # git
+
+echo whoami: `whoami`
+
 git config --global user.email "liangxinhui@qq.com"
 git config --global user.name "liangxinhui"
 if [ ! -f ~/.ssh/id_rsa ]; then 
+echo 'ssh-keygen...'
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
+else
+echo 'ssh-keygen not needed'
 fi
 
-echo whoami: `whoami`
 
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
