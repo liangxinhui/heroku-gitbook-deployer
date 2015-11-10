@@ -18,6 +18,10 @@ cd ${basePath}
 
 cp -f ${basePath}/known_hosts ~/.ssh/ 
 
+
+echo '~/.ssh/known_hosts' 
+cat ~/.ssh/known_hosts
+
 # gitbook
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 

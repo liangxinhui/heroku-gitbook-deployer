@@ -28,7 +28,11 @@ echo 'Err Clone'
 exit 1
 fi
 
-echo 'pwd:'
-pwd
-echo 'ls'
-ls
+echo 'pwd:' `pwd`
+echo 'ls:' `ls`
+
+
+echo 'ls EsunnyAPI_FAQ:' `ls EsunnyAPI_FAQ`
+
+echo '~/.ssh/known_hosts' 
+cat ~/.ssh/known_hosts
