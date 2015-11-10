@@ -15,6 +15,11 @@ echo '<br>Clone EsunnyAPI_FAQ...<br>'
 git clone git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 fi
 
+if [ ! -d EsunnyAPI_FAQ ]; then 
+echo 'Err Clone'
+exit -1
+fi
+
 echo 'pwd:'
 pwd
 echo 'ls'
@@ -29,6 +34,11 @@ git pull
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 echo '<p>build</p>'
 ${GIBOOK_BIN} -v 2.5.2-liangxh build 
+
+if [ ! -d _book ]; then 
+echo 'Err build'
+exit -1
+fi
 
 cd _book
 pwd
