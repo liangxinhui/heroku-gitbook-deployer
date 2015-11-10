@@ -28,5 +28,13 @@ app.get('/init', function(req, res){
   });
 }); 
 
+
+app.get('/test', function(req, res){ 
+  run_cmd('sh',[__dirname + "/testssh.sh", __dirname],function(data){
+	res.send('init:\n' + data);
+  });
+}); 
+
+
 app.listen(process.env.PORT);
 console.log('listen at: ' + process.env.PORT);

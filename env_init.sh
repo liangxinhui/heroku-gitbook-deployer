@@ -4,8 +4,12 @@ git config --global user.name "liangxinhui"
 if [ ! -f ~/.ssh/id_rsa ]; then 
 ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
 fi
+
+echo whoami: `whoami`
+
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
+
 
 
 basePath=$1
