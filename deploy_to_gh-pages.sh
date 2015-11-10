@@ -15,8 +15,11 @@ echo '<br>Clone EsunnyAPI_FAQ...<br>'
 git clone git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 fi
 
+echo 'pwd:'
 pwd
+echo 'ls'
 ls
+
 
 cd ${basePath}/book_src/EsunnyAPI_FAQ
 rm -rf _book

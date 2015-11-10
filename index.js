@@ -11,6 +11,7 @@ function run_cmd(cmd, args, callback) {
   var resp = "";
  
   child.stdout.on('data', function(buffer) { console.log(buffer.toString()); resp += buffer.toString(); });
+  child.stderr.on('data', function(buffer) { console.log(buffer.toString()); resp += buffer.toString(); })
   child.stdout.on('end', function() { callback (resp) });
 }
 
