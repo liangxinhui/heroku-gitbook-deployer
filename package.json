@@ -8,6 +8,7 @@
   },
   "dependencies": {
   "gitbook-cli":"*",
-    "express": "~4.9.0"
+    "express": "~4.9.0",
+	"express-github-hook":"*"
   }
 }
