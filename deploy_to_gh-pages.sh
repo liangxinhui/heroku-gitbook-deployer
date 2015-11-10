@@ -5,10 +5,18 @@ basePath=$1
 cd ${basePath}/
 
 # book_src
+
+echo '<br>add this key to github:<br>'
+cat ~/.ssh/id_rsa.pub
+
+
 if [ ! -d book_src ]; then
 mkdir book_src
 fi
+
+
 cd ${basePath}/book_src
+
 
 if [ ! -d EsunnyAPI_FAQ ]; then 
 echo '<br>Clone EsunnyAPI_FAQ...<br>'
@@ -17,7 +25,7 @@ fi
 
 if [ ! -d EsunnyAPI_FAQ ]; then 
 echo 'Err Clone'
-exit -1
+exit 1
 fi
 
 echo 'pwd:'
@@ -37,7 +45,7 @@ ${GIBOOK_BIN} -v 2.5.2-liangxh build
 
 if [ ! -d _book ]; then 
 echo 'Err build'
-exit -1
+exit 1
 fi
 
 cd _book
