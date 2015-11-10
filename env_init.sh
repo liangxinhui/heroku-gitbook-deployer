@@ -11,16 +11,6 @@ cat ~/.ssh/id_rsa.pub
 basePath=$1
 cd ${basePath}
 
-# book_src
-if [ ! -d book_src ]; then
-mkdir book_src
-fi
-cd book_src
-
-if [ ! -d EsunnyAPI_FAQ ]; then 
-echo '<br>Clone EsunnyAPI_FAQ...<br>'
-git clone https://github.com/liangxinhui/EsunnyAPI_FAQ.git
-fi
 
 # gitbook
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
@@ -38,9 +28,5 @@ fi
 
 ${GIBOOK_BIN} versions
 
-
-echo '<br>Install gitbook plugins...<br>'
-
-${GIBOOK_BIN} -v 2.5.2-liangxh install EsunnyAPI_FAQ
 
 echo '<br>Done'
