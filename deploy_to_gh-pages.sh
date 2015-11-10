@@ -69,6 +69,10 @@ git commit -m "Auto Deploy"
 echo '<p>remote add</p>'
 git remote add gh-pages git@github.com:liangxinhui/EsunnyAPI_FAQ.git
 git remote -v
+
+echo '<br>~/.ssh/known_hosts<br>' 
+cat ~/.ssh/known_hosts
+
 echo '<p>git push</p>'
 git push gh-pages master:gh-pages -f
 
