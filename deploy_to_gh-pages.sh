@@ -88,8 +88,9 @@ git pull
 GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 
 echo '<p>install plugin</p>'
-npm install liangxinhui/gitbook-plugin-js-sequence-diagram
 ${GIBOOK_BIN} -v 2.5.2-liangxh install 
+npm install liangxinhui/gitbook-plugin-js-sequence-diagram
+cat node_modules/gitbook-plugin-js-sequence-diagram/index.js
 echo '<p>build</p>'
 ${GIBOOK_BIN} -v 2.5.2-liangxh build 
 
