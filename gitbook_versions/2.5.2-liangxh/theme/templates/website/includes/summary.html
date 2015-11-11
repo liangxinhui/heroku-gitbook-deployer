@@ -8,13 +8,10 @@
                     <a target="_blank" href="{{ item.path }}">
                 {% endif %}
                         <i class="fa fa-check"></i>
-                        {% if item.level != "0" %}
-                            <b>{{ item.level }}.</b>
-                        {% endif %}
                         {{ item.title }}
                     </a>
             {% else %}
-            <span><b>{{ item.level }}.</b> {{ item.title }}</span>
+            <span>{{ item.title }}</span>
             {% endif %}
             {% if item.articles.length > 0 %}
             <ul class="articles">
