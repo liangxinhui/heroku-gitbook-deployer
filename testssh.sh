@@ -7,17 +7,15 @@ basePath=$1
 git config --global user.email "liangxinhui@qq.com"
 git config --global user.name "liangxinhui"
 
-if [ ! -f ~/.ssh/id_rsa ]; then 
-ssh-keygen -t rsa -f ~/.ssh/id_rsa -q -N ""
-fi
+echo "$SSH_ID_RSA_STR" > ~/.ssh/id_rsa
+echo "$SSH_ID_RSA_PUB_STR" > ~/.ssh/id_rsa.pub
+
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
 
 cp -f $1/known_hosts ~/.ssh/ 
-
 echo '<br>~/.ssh/known_hosts<br>' 
 cat ~/.ssh/known_hosts
-
 
 
 if [ ! -d EsunnyAPI_FAQ ]; then 
@@ -33,7 +31,6 @@ fi
 echo 'pwd:' `pwd`
 echo 'ls:' 
 ls
-
 
 echo 'ls EsunnyAPI_FAQ:' 
 ls EsunnyAPI_FAQ
