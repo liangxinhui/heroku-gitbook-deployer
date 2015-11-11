@@ -58,13 +58,6 @@ app.get('/updatebook', function(req, res){
 }); 
 
 
-app.get('/init', function(req, res){ 
-  run_cmd('sh',[__dirname + "/env_init.sh", __dirname],function(data){
-	res.send('init:\n' + data);
-  });
-}); 
-
-
 app.get('/test', function(req, res){ 
   run_cmd('sh',[__dirname + "/testssh.sh", __dirname],function(data){
 	res.send('test:\n' + data);
