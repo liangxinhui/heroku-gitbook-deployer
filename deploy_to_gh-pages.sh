@@ -26,7 +26,7 @@ cd ${basePath}/book_src
 
 if [ ! -d EsunnyAPI_FAQ ]; then 
 echo '<br>Clone EsunnyAPI_FAQ...<br>'
-git clone git@github.com:liangxinhui/EsunnyAPI_FAQ.git
+git clone git@github.com:EsunnyAPI/EsunnyAPI_FAQ.git
 fi
 
 echo 'ls EsunnyAPI_FAQ:' 
@@ -68,7 +68,7 @@ git init
 git add *
 git commit -m "Auto Deploy"
 echo '<p>remote add</p>'
-git remote add gh-pages git@github.com:liangxinhui/EsunnyAPI_FAQ.git
+git remote add gh-pages git@github.com:EsunnyAPI/EsunnyAPI_FAQ.git
 git remote -v
 
 cp -f ${basePath}/known_hosts ~/.ssh/ 
