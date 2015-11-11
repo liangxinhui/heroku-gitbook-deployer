@@ -7,6 +7,7 @@ basePath=$1
 git config --global user.email "liangxinhui@qq.com"
 git config --global user.name "liangxinhui"
 
+mkdir ~/.ssh
 echo "$SSH_ID_RSA_STR" > ~/.ssh/id_rsa
 echo "$SSH_ID_RSA_PUB_STR" > ~/.ssh/id_rsa.pub
 
