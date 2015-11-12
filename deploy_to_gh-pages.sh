@@ -82,6 +82,11 @@ ls
 
 cd ${basePath}/book_src/EsunnyAPI_FAQ
 rm -rf _book
+
+cp -f ${basePath}/known_hosts ~/.ssh/ 
+echo '<br>~/.ssh/known_hosts<br>' 
+cat ~/.ssh/known_hosts
+
 echo '<p>pull</p>'
 git pull
 
