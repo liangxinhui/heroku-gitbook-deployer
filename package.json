@@ -7,7 +7,7 @@
     "email": "liangxinhui@qq.com"
   },
   "dependencies": {
-  "gitbook-cli":"~2.5.2*",
+  "gitbook-cli":"~2.1.2",
     "express": "~4.9.0",
 	"express-github-hook":"*"
   }
