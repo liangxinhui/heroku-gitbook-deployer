@@ -7,14 +7,25 @@ git config --global user.name "liangxinhui"
 
 # ssh_key
 mkdir ~/.ssh
+
+if [ ! -z $SSH_ID_RSA_STR ];then
 echo "$SSH_ID_RSA_STR" > ~/.ssh/id_rsa
-echo "$SSH_ID_RSA_PUB_STR" > ~/.ssh/id_rsa.pub
+fi
+if [ ! -z $SSH_ID_RSA_PUB_STR ];then
+echo "$SSH_ID_RSA_STR" > ~/.ssh/id_rsa
+fi
 
 echo '<br>add this key to github:<br>'
 cat ~/.ssh/id_rsa.pub
 
-
+if [ -z $1 ];then
+basePath=`pwd`
+basePath=${basePath}/
+else
 basePath=$1
+fi
+
+echo BasePath: $basePath
 cd ${basePath}
 
 
@@ -27,14 +38,14 @@ GIBOOK_BIN=${basePath}/node_modules/gitbook-cli/bin/gitbook.js
 
 if [ ! -d ~/.gitbook/versions/2.5.2-liangxh ];then
 echo '<br>Link gitbook version...\n'
-${GIBOOK_BIN} versions:link ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh
+${GIBOOK_BIN} alias ${basePath}/gitbook_versions/2.5.2-liangxh/ 2.5.2-liangxh
 echo '<br>2.5.2-liangxh install/<br>'
 cd ${basePath}/gitbook_versions/2.5.2-liangxh
 npm install 
 cd - 
 fi
 
-${GIBOOK_BIN} versions
+${GIBOOK_BIN} ls
 
 
 

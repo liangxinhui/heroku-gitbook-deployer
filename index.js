@@ -64,6 +64,7 @@ app.get('/test', function(req, res){
   });
 }); 
 
+var myPort = process.env.PORT || 3001;
 
-app.listen(process.env.PORT);
-console.log('listen at: ' + process.env.PORT);
+app.listen(myPort);
+console.log('listen at: ' + myPort);
