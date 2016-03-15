@@ -8,11 +8,15 @@ git config --global user.name "liangxinhui"
 # ssh_key
 mkdir ~/.ssh
 
-if [ ! -z $SSH_ID_RSA_STR ];then
+if [ -z $SSH_ID_RSA_STR ];then
+echo SSH_ID_RSA_STR empty
+else
 echo "$SSH_ID_RSA_STR" > ~/.ssh/id_rsa
 fi
-if [ ! -z $SSH_ID_RSA_PUB_STR ];then
-echo "$SSH_ID_RSA_STR" > ~/.ssh/id_rsa
+if [ -z $SSH_ID_RSA_PUB_STR ];then
+echo $SSH_ID_RSA_PUB_STR empty
+else
+echo "$SSH_ID_RSA_PUB_STR" > ~/.ssh/id_rsa.pub
 fi
 
 echo '<br>add this key to github:<br>'
